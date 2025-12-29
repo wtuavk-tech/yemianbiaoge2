@@ -630,13 +630,13 @@ const App = () => {
                </thead>
                <tbody>
                   {tableData.map((row, idx) => (
-                    <tr key={row.id} className="bg-white hover:bg-blue-50/50 transition-colors border-b border-[#cbd5e1] group">
+                    <tr key={row.id} className={`${idx % 2 === 1 ? 'bg-red-50' : 'bg-white'} hover:bg-blue-50/50 transition-colors border-b border-[#cbd5e1] group`}>
                        {config.headers.map((h, colIdx) => (
                          <td key={colIdx} className="px-4 py-2.5 text-[13px] text-slate-700 border-r border-slate-100 last:border-r-0 whitespace-nowrap max-w-[200px] truncate">
                            {row[h]}
                          </td>
                        ))}
-                       <td className="px-4 py-2.5 bg-white border-l border-slate-100 sticky right-0 shadow-[-10px_0_10px_-5px_rgba(0,0,0,0.05)]">
+                       <td className={`px-4 py-2.5 ${idx % 2 === 1 ? 'bg-red-50' : 'bg-white'} border-l border-slate-100 sticky right-0 shadow-[-10px_0_10px_-5px_rgba(0,0,0,0.05)]`}>
                          <div className="flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
                            <button className="text-blue-500 hover:text-blue-700" title="编辑"><Edit size={14} /></button>
                            <button className="text-red-500 hover:text-red-700" title="删除"><Trash2 size={14} /></button>
