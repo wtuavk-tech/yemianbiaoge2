@@ -584,7 +584,7 @@ const App = () => {
   const config = TAB_CONFIGS[activeTab];
 
   return (
-    <div className="min-h-screen bg-[#f0f2f5] p-4 font-sans text-slate-800 flex flex-col gap-3">
+    <div className="h-screen overflow-hidden bg-[#f0f2f5] p-4 font-sans text-slate-800 flex flex-col gap-3">
       <NotificationBar />
       
       <TabSelector activeTab={activeTab} onSelect={setActiveTab} />
@@ -649,18 +649,32 @@ const App = () => {
          </div>
          
          {/* Pagination */}
-         <div className="flex items-center justify-between px-6 py-3 border-t border-slate-200 bg-white text-[13px] text-slate-500">
-            <span>共 400 条记录</span>
+         <div className="flex items-center justify-center gap-4 px-6 py-3 border-t border-slate-200 bg-white text-[13px] text-slate-500 font-medium">
+            <span>共 100 条</span>
+            
+            <div className="relative">
+               <select className="appearance-none bg-white border border-slate-200 rounded px-2 py-1.5 pr-8 outline-none focus:border-blue-500 cursor-pointer text-slate-600 hover:border-slate-300 transition-colors text-center w-[100px]">
+                  <option>20条/页</option>
+                  <option>50条/页</option>
+                  <option>100条/页</option>
+               </select>
+               <ChevronDown size={14} className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"/>
+            </div>
+
+            <div className="flex items-center gap-1 select-none">
+               <button className="w-7 h-7 flex items-center justify-center text-slate-400 hover:text-blue-600 disabled:opacity-50 transition-colors"><ChevronLeft size={16} /></button>
+               <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-100 text-slate-600 hover:text-blue-600 transition-colors">1</button>
+               <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-100 text-slate-600 hover:text-blue-600 transition-colors">2</button>
+               <button className="w-7 h-7 flex items-center justify-center rounded bg-transparent text-blue-600 font-bold">3</button>
+               <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-100 text-slate-600 hover:text-blue-600 transition-colors">4</button>
+               <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-100 text-slate-600 hover:text-blue-600 transition-colors">5</button>
+               <button className="w-7 h-7 flex items-center justify-center text-slate-400 hover:text-blue-600 disabled:opacity-50 transition-colors"><ChevronRight size={16} /></button>
+            </div>
+
             <div className="flex items-center gap-2">
-               <button className="w-7 h-7 flex items-center justify-center border border-slate-200 rounded bg-white hover:border-blue-400 hover:text-blue-500 transition-all disabled:opacity-50"><ChevronLeft size={14} /></button>
-               <div className="flex items-center gap-1">
-                 <button className="w-7 h-7 flex items-center justify-center border border-blue-500 bg-blue-500 text-white rounded">1</button>
-                 <button className="w-7 h-7 flex items-center justify-center border border-slate-200 rounded bg-white hover:border-blue-400 hover:text-blue-500 transition-all">2</button>
-                 <button className="w-7 h-7 flex items-center justify-center border border-slate-200 rounded bg-white hover:border-blue-400 hover:text-blue-500 transition-all">3</button>
-                 <span className="px-1">...</span>
-                 <button className="w-7 h-7 flex items-center justify-center border border-slate-200 rounded bg-white hover:border-blue-400 hover:text-blue-500 transition-all">20</button>
-               </div>
-               <button className="w-7 h-7 flex items-center justify-center border border-slate-200 rounded bg-white hover:border-blue-400 hover:text-blue-500 transition-all"><ChevronRight size={14} /></button>
+               <span>前往</span>
+               <input type="text" defaultValue="3" className="w-12 h-7 border border-slate-200 rounded text-center outline-none focus:border-blue-500 transition-all text-slate-700" />
+               <span>页</span>
             </div>
          </div>
       </div>
