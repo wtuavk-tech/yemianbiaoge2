@@ -320,16 +320,16 @@ const DataOverview = ({ activeTab, onToggleFilter, isFilterOpen, onAdd }: { acti
     <div className="bg-white rounded-xl border border-slate-200 overflow-hidden flex items-center shadow-sm h-[60px] mb-3">
       <div className="flex items-center gap-4 px-6 flex-1 overflow-x-auto no-scrollbar">
         <div className={`flex items-center gap-3 ${isWorkDaily ? 'mr-4' : 'mr-8'} shrink-0 sticky left-0 bg-white z-10 pr-4`}>
-          <div className="w-9 h-9 rounded-full bg-[#1890ff] flex items-center justify-center shadow-sm shadow-blue-100">
-             <BarChart2 size={18} className="text-white" strokeWidth={2.5} />
+          <div className="w-8 h-8 rounded-full bg-[#1890ff] flex items-center justify-center shadow-sm shadow-blue-100">
+             <BarChart2 size={16} className="text-white" strokeWidth={3} />
           </div>
           <span className="text-[14px] font-bold text-slate-700 tracking-tight whitespace-nowrap">数据概览</span>
         </div>
-        <div className={`flex items-center ${isWorkDaily ? 'gap-3' : 'gap-16'} shrink-0`}>
+        <div className={`flex items-center ${isWorkDaily ? 'gap-6' : 'gap-12'} shrink-0`}>
           {data.map(([label, val, color]) => (
-            <div key={label} className={`flex flex-row items-center ${isWorkDaily ? 'gap-1.5' : 'gap-3'} whitespace-nowrap`}>
-              <span className={`${isWorkDaily ? 'text-[11px]' : 'text-[13px]'} text-slate-500 font-medium`}>{label}</span>
-              <span className={`${isWorkDaily ? 'text-[16px]' : 'text-[22px]'} font-bold font-sans leading-none tracking-tight`} style={{ color }}>{val}</span>
+            <div key={label} className={`flex flex-row items-center gap-2 whitespace-nowrap`}>
+              <span className="text-[12px] text-slate-500 font-medium">{label}</span>
+              <span className="text-[20px] font-bold font-sans leading-none tracking-tight" style={{ color }}>{val}</span>
             </div>
           ))}
         </div>
