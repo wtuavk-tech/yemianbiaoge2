@@ -271,7 +271,7 @@ const TabSelector = ({ activeTab, onSelect }: { activeTab: TabType, onSelect: (t
             onClick={() => onSelect(tab as TabType)}
             style={{ borderColor: color }}
             className={`
-              relative flex flex-row items-center justify-center gap-3 py-2 rounded-xl transition-all duration-200 border bg-white
+              relative flex flex-row items-center justify-center gap-3 h-[44px] rounded-xl transition-all duration-200 border bg-white
               ${isActive 
                 ? 'shadow-md transform scale-[1.02]' 
                 : 'shadow-sm hover:shadow-md opacity-90 hover:opacity-100'
@@ -280,10 +280,10 @@ const TabSelector = ({ activeTab, onSelect }: { activeTab: TabType, onSelect: (t
           >
             {/* Icon Container */}
             <div 
-              className="w-9 h-9 rounded-full flex items-center justify-center text-white shadow-sm transition-transform duration-200"
+              className="w-7 h-7 rounded-full flex items-center justify-center text-white shadow-sm transition-transform duration-200"
               style={{ backgroundColor: color }}
             >
-              <Icon size={18} strokeWidth={2.5} />
+              <Icon size={16} strokeWidth={2.5} />
             </div>
             
             {/* Label */}
